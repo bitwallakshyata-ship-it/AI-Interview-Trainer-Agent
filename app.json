@@ -1,0 +1,13 @@
+{
+  "name": "AI Interview Trainer Agent",
+  "version": "1.0",
+  "domain": "Education",
+  "description": "AI-powered interview preparation system",
+  "technology": [
+    "Python",
+    "Flask",
+    "LangFlow",
+    "IBM Granite",
+    "IBM watsonx.ai"
+  ]
+}
