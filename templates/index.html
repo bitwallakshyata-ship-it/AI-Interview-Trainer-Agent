@@ -14,14 +14,14 @@
 
         .container{
             background:white;
-            width:60%;
+            width:70%;
             margin:auto;
             padding:30px;
             border-radius:12px;
             box-shadow:0px 0px 10px rgba(0,0,0,0.2);
         }
 
-        input{
+        input, textarea, select{
             width:80%;
             padding:10px;
             margin:10px;
@@ -34,6 +34,14 @@
         }
 
         ol{
+            text-align:left;
+        }
+
+        .feedback{
+            margin-top:20px;
+            padding:15px;
+            background:#eef7ee;
+            border-radius:10px;
             text-align:left;
         }
 
@@ -62,8 +70,25 @@
 
         <br>
 
+        <select name="interview_type" required>
+            <option value="">Select Interview Type</option>
+            <option value="HR">HR Interview</option>
+            <option value="Technical">Technical Interview</option>
+            <option value="Behavioral">Behavioral Interview</option>
+        </select>
+
+        <br>
+
+        <textarea
+            name="answer"
+            rows="6"
+            placeholder="Enter your interview answer here">
+        </textarea>
+
+        <br>
+
         <button type="submit">
-            Generate Questions
+            Generate & Evaluate
         </button>
 
     </form>
@@ -77,6 +102,30 @@
                 <li>{{ q }}</li>
             {% endfor %}
         </ol>
+
+    {% endif %}
+
+    {% if feedback %}
+
+        <div class="feedback">
+
+            <h2>AI Feedback</h2>
+
+            <pre>{{ feedback }}</pre>
+
+        </div>
+
+    {% endif %}
+
+    {% if report %}
+
+        <div class="feedback">
+
+            <h2>Performance Report</h2>
+
+            <pre>{{ report }}</pre>
+
+        </div>
 
     {% endif %}
 
